@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --brand-primary: #7C3AED; /* Purple */
+    --brand-secondary: #F59E0B; /* Amber */
+    --brand-accent: #EF4444; /* Red */
+    --bg: #F8FAFC; /* Light Gray */
+    --bg-secondary: #F1F5F9; /* Lighter Gray */
+    --bg-card: #FFFFFF; /* White */
+    --text: #1E293B; /* Dark Gray */
+}
+
+.text-brand { color: var(--brand-primary); }
+.bg-brand { background-color: var(--brand-primary); }
+.text-brand-secondary { color: var(--brand-secondary); }
+.bg-accent { background-color: var(--brand-accent); }
+.text-accent { color: var(--brand-accent); }
+.text-on-bg { color: var(--text); }
+.bg-site { background-color: var(--bg); }
+.bg-secondary { background-color: var(--bg-secondary); }
+.bg-card { background-color: var(--bg-card); }
+
+/* Enhanced button styles */
+.btn-primary {
+    @apply px-8 py-3 bg-brand text-white rounded-xl font-medium hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl;
+}
+
+.btn-secondary {
+    @apply px-6 py-2 border-2 border-brand text-brand rounded-xl font-medium hover:bg-brand hover:text-white transition-all duration-300;
+}
+
+/* Enhanced spacing */
+.section-padding {
+    @apply py-16 px-4 sm:px-8 lg:px-12;
+}
+
+.card-spacing {
+    @apply p-6 sm:p-8;
+}
+
+/* muted text shades */
+.text-muted { color: rgba(30,41,59,0.65); }
+.text-muted-weak { color: rgba(30,41,59,0.45); }
+
+* {
+    font-family: Outfit;
+}
+
+body {
+    background-color: var(--bg);
+}
+
+a.active hr {
+    @apply block;
+}
+
+.prata-regular {
+    font-family: "Prata", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+@media (max-width:640px) {
+    a.active {
+        @apply text-white bg-brand;
+    }
+}

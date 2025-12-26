@@ -1,0 +1,15 @@
+{
+  "name": "shopez-full-stack",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npm run build:frontend && npm run build:admin && npm run build:backend",
+    "build:frontend": "cd frontend && npm install && npm run build",
+    "build:admin": "cd admin && npm install && npm run build", 
+    "build:backend": "cd backend && npm install",
+    "start": "cd backend && npm start",
+    "dev": "concurrently \"cd backend && npm run server\" \"cd frontend && npm run dev\" \"cd admin && npm run dev\""
+  },
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
