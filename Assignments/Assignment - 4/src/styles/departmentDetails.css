@@ -1,0 +1,116 @@
+/* Department Details Page Styles */
+.department-details-container {
+  padding: 3rem 0;
+}
+
+.department-details-header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  padding: 3rem;
+  border-radius: 10px;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.department-details-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.department-details-header p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 2rem;
+  padding: 0.5rem 1rem;
+  background: var(--light-bg);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.back-button:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.details-section {
+  background: var(--light-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  border-left: 5px solid var(--secondary-color);
+}
+
+.details-section h2 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.details-section ul {
+  list-style: none;
+}
+
+.details-section li {
+  padding: 0.8rem 0;
+  color: var(--light-text);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.details-section li:last-child {
+  border-bottom: none;
+}
+
+.details-section li:before {
+  content: "→";
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+  .department-details-header {
+    padding: 2rem;
+  }
+
+  .department-details-header h1 {
+    font-size: 2rem;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .details-section {
+    padding: 1.5rem;
+  }
+
+  .details-section h2 {
+    font-size: 1.3rem;
+  }
+}

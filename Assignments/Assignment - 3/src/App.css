@@ -1,0 +1,31 @@
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+.nav a.active {
+  font-weight: bold;
+  border-bottom: 2px solid #333;
+}
+
+main {
+  margin-top: 1rem;
+}

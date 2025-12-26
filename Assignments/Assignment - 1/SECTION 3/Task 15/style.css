@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    position: relative;
+    height: 400px;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    background-color: #4CAF50;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.relative-box {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    background-color: #2196F3;
+}
+
+.absolute-box {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #FF9800;
+}
+
+.fixed-box {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #F44336;
+}

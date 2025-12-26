@@ -1,0 +1,38 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+
+}
+
+nav {
+    display: flex;
+    background-color: #38564c;
+    padding: 10px 20px;
+    justify-content: space-between;
+    text-transform: uppercase;   
+    color: white;
+}
+
+ ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+li:hover {
+    color: brown;
+    cursor: pointer;
+}
+
+
+figure{
+    min-height: 100vh;
+}
+
+figure img {
+    width: 100%;
+}

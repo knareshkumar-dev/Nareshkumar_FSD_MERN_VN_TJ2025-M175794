@@ -1,0 +1,161 @@
+[
+  {
+    "id": "cse",
+    "name": "Computer Science Engineering",
+    "description": "The CSE department focuses on software development, algorithms, and computing. Our curriculum combines theoretical knowledge with practical skills in modern programming languages and frameworks.",
+    "courses": [
+      "Data Structures & Algorithms",
+      "Operating Systems",
+      "Database Management Systems",
+      "Web Development",
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Cloud Computing"
+    ],
+    "faculty": [
+      "Dr. Kumar Singh (HoD)",
+      "Dr. Meena Sharma",
+      "Prof. Rajesh Kumar",
+      "Prof. Priya Patel"
+    ],
+    "labs": [
+      "Programming Lab",
+      "Networks Lab",
+      "Database Lab",
+      "AI/ML Lab",
+      "Web Development Lab"
+    ]
+  },
+  {
+    "id": "it",
+    "name": "Information Technology",
+    "description": "IT department specializes in information systems, networking, and IT infrastructure. We focus on enterprise solutions and network architecture with hands-on experience.",
+    "courses": [
+      "Computer Networks",
+      "System Administration",
+      "IT Security",
+      "Enterprise Applications",
+      "Network Architecture",
+      "IoT Fundamentals",
+      "DevOps"
+    ],
+    "faculty": [
+      "Dr. Anil Kumar (HoD)",
+      "Prof. Neha Gupta",
+      "Prof. Suresh Verma",
+      "Dr. Anjali Singh"
+    ],
+    "labs": [
+      "Networking Lab",
+      "System Administration Lab",
+      "Cybersecurity Lab",
+      "IoT Lab"
+    ]
+  },
+  {
+    "id": "ece",
+    "name": "Electronics & Communication Engineering",
+    "description": "ECE department focuses on electronics, communications, and signal processing. Our program covers both analog and digital systems with cutting-edge technology exposure.",
+    "courses": [
+      "Digital Electronics",
+      "Microprocessors",
+      "Signal Processing",
+      "Communication Systems",
+      "VLSI Design",
+      "Embedded Systems",
+      "Antenna Design"
+    ],
+    "faculty": [
+      "Dr. Vikram Patel (HoD)",
+      "Prof. Ravi Sharma",
+      "Dr. Sunita Kulkarni",
+      "Prof. Deepak Mehta"
+    ],
+    "labs": [
+      "Electronics Lab",
+      "Microprocessor Lab",
+      "VLSI Lab",
+      "Communication Lab",
+      "Embedded Systems Lab"
+    ]
+  },
+  {
+    "id": "mechanical",
+    "name": "Mechanical Engineering",
+    "description": "Mechanical Engineering prepares students for design, manufacturing, and thermal systems. Our program combines CAD, simulation, and hands-on project experience.",
+    "courses": [
+      "Thermodynamics",
+      "Fluid Mechanics",
+      "Machine Design",
+      "Manufacturing Processes",
+      "CAD/CAM",
+      "Robotics",
+      "Automotive Engineering"
+    ],
+    "faculty": [
+      "Dr. Sanjay Reddy (HoD)",
+      "Prof. Mohan Kumar",
+      "Prof. Kavya Sharma",
+      "Dr. Ashok Nair"
+    ],
+    "labs": [
+      "CAD/CAM Lab",
+      "Manufacturing Lab",
+      "Thermal Lab",
+      "Robotics Lab",
+      "Testing & Measurement Lab"
+    ]
+  },
+  {
+    "id": "civil",
+    "name": "Civil Engineering",
+    "description": "Civil Engineering focuses on infrastructure design, construction, and structural analysis. Students gain expertise in sustainable building practices and project management.",
+    "courses": [
+      "Structural Analysis",
+      "Construction Management",
+      "Environmental Engineering",
+      "Geotechnical Engineering",
+      "Transportation Systems",
+      "Building Information Modeling",
+      "Sustainable Design"
+    ],
+    "faculty": [
+      "Dr. Ramesh Kumar (HoD)",
+      "Prof. Geeta Singh",
+      "Prof. Manoj Patel",
+      "Dr. Vineeta Dubey"
+    ],
+    "labs": [
+      "Soil Mechanics Lab",
+      "Structural Testing Lab",
+      "Materials Lab",
+      "Surveying Lab",
+      "BIM Lab"
+    ]
+  },
+  {
+    "id": "mba",
+    "name": "Master of Business Administration",
+    "description": "MBA program prepares students for leadership roles in business. We focus on management strategy, finance, and entrepreneurship with industry-relevant curriculum.",
+    "courses": [
+      "Business Strategy",
+      "Financial Management",
+      "Marketing Management",
+      "Operations Management",
+      "Entrepreneurship",
+      "International Business",
+      "Data Analytics for Business"
+    ],
+    "faculty": [
+      "Dr. Priya Sharma (HoD)",
+      "Prof. Arjun Singh",
+      "Prof. Heena Verma",
+      "Dr. Rohan Patel"
+    ],
+    "labs": [
+      "Business Simulation Lab",
+      "Analytics Lab",
+      "Entrepreneurship Incubation Center"
+    ]
+  }
+]

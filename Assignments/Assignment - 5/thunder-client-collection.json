@@ -1,0 +1,123 @@
+{
+  "clientName": "Thunder Client",
+  "dateExported": "2025-12-09T00:00:00.000Z",
+  "version": "1.1",
+  "folders": [],
+  "requests": [
+    {
+      "id": "1",
+      "name": "1. Create Book - Fiction",
+      "method": "POST",
+      "url": "http://localhost:3000/books",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "publishedYear": 1925,
+        "genre": "Fiction"
+      }
+    },
+    {
+      "id": "2",
+      "name": "2. Create Book - Science Fiction",
+      "method": "POST",
+      "url": "http://localhost:3000/books",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "title": "Dune",
+        "author": "Frank Herbert",
+        "publishedYear": 1965,
+        "genre": "Science Fiction"
+      }
+    },
+    {
+      "id": "3",
+      "name": "3. Create Book - Mystery",
+      "method": "POST",
+      "url": "http://localhost:3000/books",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "title": "The Murder of Roger Ackroyd",
+        "author": "Agatha Christie",
+        "publishedYear": 1926,
+        "genre": "Mystery"
+      }
+    },
+    {
+      "id": "4",
+      "name": "4. Create Book - Fantasy",
+      "method": "POST",
+      "url": "http://localhost:3000/books",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "title": "The Lord of the Rings",
+        "author": "J.R.R. Tolkien",
+        "publishedYear": 1954,
+        "genre": "Fantasy"
+      }
+    },
+    {
+      "id": "5",
+      "name": "5. Get All Books",
+      "method": "GET",
+      "url": "http://localhost:3000/books",
+      "headers": {}
+    },
+    {
+      "id": "6",
+      "name": "6. Get Book by ID",
+      "method": "GET",
+      "url": "http://localhost:3000/books/{PASTE_BOOK_ID_HERE}",
+      "headers": {}
+    },
+    {
+      "id": "7",
+      "name": "7. Update Book by ID",
+      "method": "PUT",
+      "url": "http://localhost:3000/books/{PASTE_BOOK_ID_HERE}",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "title": "The Great Gatsby (Updated Edition)",
+        "publishedYear": 1925
+      }
+    },
+    {
+      "id": "8",
+      "name": "8. Delete Book by ID",
+      "method": "DELETE",
+      "url": "http://localhost:3000/books/{PASTE_BOOK_ID_HERE}",
+      "headers": {}
+    },
+    {
+      "id": "9",
+      "name": "9. Filter Books by Genre - Fiction",
+      "method": "GET",
+      "url": "http://localhost:3000/books/filter/genre?genre=Fiction",
+      "headers": {}
+    },
+    {
+      "id": "10",
+      "name": "10. Filter Books by Genre - Science Fiction",
+      "method": "GET",
+      "url": "http://localhost:3000/books/filter/genre?genre=Science%20Fiction",
+      "headers": {}
+    },
+    {
+      "id": "11",
+      "name": "11. Filter Books by Genre - Fantasy",
+      "method": "GET",
+      "url": "http://localhost:3000/books/filter/genre?genre=Fantasy",
+      "headers": {}
+    }
+  ]
+}
