@@ -1,0 +1,166 @@
+// Colors - Premium Travel Brand
+$primary-navy: #1a237e;
+$primary-blue: #2196f3;
+$accent-gold: #ffc107;
+$white: #ffffff;
+$light-gray: #f5f5f5;
+$dark-gray: #424242;
+$success: #4caf50;
+$warning: #ff9800;
+$error: #f44336;
+
+// Gradients
+$gradient-primary: linear-gradient(135deg, $primary-navy 0%, $primary-blue 100%);
+$gradient-hero: linear-gradient(135deg, rgba($primary-navy, 0.8) 0%, rgba($primary-blue, 0.6) 100%);
+
+// Typography
+$font-primary: 'Montserrat', sans-serif;
+$font-secondary: 'Open Sans', sans-serif;
+
+$font-sizes: (
+  xs: 0.75rem,    // 12px
+  sm: 0.875rem,   // 14px
+  base: 1rem,     // 16px
+  lg: 1.125rem,   // 18px
+  xl: 1.25rem,    // 20px
+  2xl: 1.5rem,    // 24px
+  3xl: 1.875rem,  // 30px
+  4xl: 2.25rem    // 36px
+);
+
+// Spacing
+$spacing: (
+  1: 0.25rem,  // 4px
+  2: 0.5rem,   // 8px
+  3: 0.75rem,  // 12px
+  4: 1rem,     // 16px
+  5: 1.25rem,  // 20px
+  6: 1.5rem,   // 24px
+  8: 2rem,     // 32px
+  10: 2.5rem,  // 40px
+  12: 3rem     // 48px
+);
+
+// Shadows
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+$shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+
+// Border radius
+$border-radius: (
+  sm: 0.25rem,
+  md: 0.5rem,
+  lg: 0.75rem,
+  xl: 1rem,
+  full: 50%
+);
+
+// Breakpoints
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
+  transition: $property $duration $timing;
+}
+
+@mixin hover-lift {
+  @include transition(transform, 0.3s, ease-out);
+  
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@mixin glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@mixin button-primary {
+  background: $gradient-primary;
+  color: $white;
+  border: none;
+  padding: map-get($spacing, 3) map-get($spacing, 6);
+  border-radius: map-get($border-radius, md);
+  font-family: $font-primary;
+  font-weight: 600;
+  cursor: pointer;
+  @include transition();
+  @include hover-lift;
+  
+  &:hover {
+    box-shadow: $shadow-lg;
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+// Animation keyframes
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+// Utility classes
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}

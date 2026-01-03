@@ -1,0 +1,184 @@
+.flight-comparison-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.flight-comparison-modal {
+  background: white;
+  border-radius: 15px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.comparison-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  border-bottom: 1px solid #eee;
+  
+  h2 {
+    margin: 0;
+    color: #1a237e;
+    font-size: 1.5rem;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #666;
+    
+    &:hover {
+      color: #1a237e;
+    }
+  }
+}
+
+.flight-selector {
+  padding: 20px 30px;
+  border-bottom: 1px solid #eee;
+  
+  h3 {
+    margin: 0 0 15px 0;
+    color: #333;
+    font-size: 1.1rem;
+  }
+}
+
+.available-flights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+}
+
+.flight-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+  
+  span:first-child {
+    font-weight: 500;
+    color: #333;
+  }
+  
+  span:nth-child(2) {
+    color: #2196f3;
+    font-weight: bold;
+  }
+  
+  button {
+    background: #2196f3;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    
+    &:hover:not(:disabled) {
+      background: #1976d2;
+    }
+    
+    &:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.comparison-table {
+  padding: 20px 30px;
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+    
+    th {
+      background: #f5f5f5;
+      font-weight: 600;
+      color: #333;
+      position: relative;
+      
+      .remove-flight {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background: #ff4444;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        &:hover {
+          background: #cc0000;
+        }
+      }
+    }
+    
+    td {
+      &.price {
+        font-weight: bold;
+        color: #2196f3;
+        font-size: 1.1rem;
+      }
+    }
+    
+    tr:nth-child(even) {
+      background: #fafafa;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .flight-comparison-modal {
+    max-width: 95vw;
+    margin: 10px;
+  }
+  
+  .comparison-header,
+  .flight-selector,
+  .comparison-table {
+    padding: 15px 20px;
+  }
+  
+  .available-flights {
+    grid-template-columns: 1fr;
+  }
+  
+  .comparison-table {
+    overflow-x: auto;
+    
+    table {
+      min-width: 600px;
+    }
+  }
+}

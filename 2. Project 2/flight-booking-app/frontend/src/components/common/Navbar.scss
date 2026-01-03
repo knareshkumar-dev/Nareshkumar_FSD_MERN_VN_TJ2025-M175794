@@ -1,0 +1,177 @@
+@import '../../styles/_variables.scss';
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.78);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 1px 10px rgba(2,6,23,0.06);
+  height: 48px;
+  padding: 0;
+  border-bottom: 1px solid rgba(16,24,40,0.04);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar-brand {
+  font-size: 20px;
+  font-weight: 700;
+  color: $primary-blue;
+  text-decoration: none;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.navbar-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.navbar-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.nav-item { display: flex; align-items: center; }
+
+.nav-link {
+  color: rgba(17,24,39,0.9);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.14s ease, transform 0.12s ease;
+  padding: 6px 4px;
+}
+
+.nav-link:hover { 
+  color: $primary-blue; 
+  transform: translateY(-1px);
+}
+
+.nav-link:not(.active):hover {
+  background: rgba($primary-blue, 0.04);
+  border-radius: 6px;
+}
+
+.nav-link.active {
+  color: $primary-blue;
+  position: relative;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: $primary-blue;
+  border-radius: 1px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.14s ease, box-shadow 0.14s ease;
+}
+
+.btn-primary {
+  background: $primary-blue;
+  color: white;
+  box-shadow: 0 8px 24px rgba(25,118,210,0.12);
+}
+
+.btn-primary:hover { transform: translateY(-2px); }
+
+.btn-outline {
+  background: transparent;
+  color: $primary-blue;
+  border: 2px solid $primary-blue;
+}
+
+ .btn-outline:hover {
+  background: $primary-blue;
+  color: $white;
+ }
+
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* Accessibility: visible focus states - use focus-visible to avoid mouse click outline */
+.nav-link:focus-visible,
+.btn:focus-visible,
+.mobile-toggle:focus-visible {
+  outline: 3px solid rgba($primary-blue, 0.12);
+  outline-offset: 2px;
+}
+
+/* remove default focus outline for mouse interactions */
+.nav-link:focus:not(:focus-visible) { outline: none; }
+
+.mobile-toggle span {
+  width: 25px;
+  height: 3px;
+  background: $dark-gray;
+  margin: 2px 0;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .mobile-toggle {
+    display: flex;
+  }
+  
+  .navbar-menu {
+    position: fixed;
+    top: 48px;
+    left: 0;
+    right: 0;
+    background: $white;
+    box-shadow: $shadow-sm;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 0.28s ease;
+    flex-direction: column;
+    padding: 16px;
+  }
+  
+  .navbar-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .navbar-links, .navbar-actions { 
+    flex-direction: column; 
+    gap: 16px;
+    width: 100%;
+  }
+  
+  .nav-link, .btn {
+    padding: 12px 16px;
+    text-align: center;
+    width: 100%;
+  }
+}

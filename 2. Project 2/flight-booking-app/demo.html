@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking App - Premium Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #424242;
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(26, 35, 126, 0.8) 0%, rgba(33, 150, 243, 0.6) 100%),
+                        url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80') center/cover;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 32px;
+            opacity: 0.9;
+        }
+
+        .search-form {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: #1a237e;
+            margin-bottom: 8px;
+            font-size: 0.875rem;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #2196f3;
+            box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+        }
+
+        .search-btn {
+            background: linear-gradient(135deg, #1a237e 0%, #2196f3 100%);
+            color: white;
+            border: none;
+            padding: 16px 24px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-size: 1.125rem;
+        }
+
+        .search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled .navbar-brand {
+            color: #1a237e;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        .navbar.scrolled .nav-link {
+            color: #424242;
+        }
+
+        .navbar.scrolled .nav-link:hover {
+            color: #2196f3;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #1a237e 0%, #2196f3 100%);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .search-form {
+                margin: 0 16px;
+                padding: 24px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="navbar-brand">✈️ FlightBooking</a>
+            <div class="nav-links">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Flights</a>
+                <a href="#" class="nav-link">Login</a>
+                <a href="#" class="btn-primary">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Your Journey Begins Here</h1>
+            <p>Discover the world with our premium flight booking experience. Search, compare, and book flights with confidence and ease.</p>
+            
+            <form class="search-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>From</label>
+                        <select>
+                            <option>New York (JFK)</option>
+                            <option>Los Angeles (LAX)</option>
+                            <option>Chicago (CHI)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>To</label>
+                        <select>
+                            <option>Los Angeles (LAX)</option>
+                            <option>New York (JFK)</option>
+                            <option>Miami (MIA)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Departure Date</label>
+                        <input type="date" value="2024-01-15">
+                    </div>
+                    <div class="form-group">
+                        <label>Class</label>
+                        <select>
+                            <option>Economy</option>
+                            <option>Business</option>
+                            <option>First Class</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Passengers</label>
+                        <select>
+                            <option>1 Passenger</option>
+                            <option>2 Passengers</option>
+                            <option>3 Passengers</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="search-btn">Search Flights ✈️</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Form submission
+        document.querySelector('.search-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('🎉 Flight search functionality will be available once the React app is running!\n\nTo start the full app:\n1. Run "npm run dev" in backend folder\n2. Run "npm start" in frontend folder');
+        });
+    </script>
+</body>
+</html>
